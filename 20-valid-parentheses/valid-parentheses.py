@@ -1,18 +1,18 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        hashmap = {")": "(", "}": "{", "]": "["}
-        stk = []
- 
-        for c in s:
-            if c not in hashmap:
-                stk.append(c)
-            else:
-                if not stk:
+        opening = ['(','{','[']
+        closing = [')','}',']']
+        st = []
+        for ch in s:
+            if ch in opening:
+                st.append(ch)
+            elif ch in closing:
+                if len(st)<=0:
                     return False
-                else:
-                    popped = stk.pop()
-                    if popped != hashmap[c]:
-                        return False
- 
-        return not stk
-        
+                c=st.pop()
+                if opening.index(c)!=closing.index(ch):
+                    return False
+        if len(st)==0:
+            return True 
+        else:
+            return False 
