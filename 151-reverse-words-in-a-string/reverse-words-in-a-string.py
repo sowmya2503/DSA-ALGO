@@ -1,12 +1,11 @@
 class Solution:
     def reverseWords(self, s: str) -> str:
+        words=s.split(' ')
         l=[]
-        st = s.split(' ')
-        for word in st:
-            if word!='':
+        for word in words:
+            if word!= '':
                 l.append(word)
-                k = ' '.join(reversed(l))
+        k=' '.join(reversed(l))
         return k
-
 
         
