@@ -1,20 +1,16 @@
 class Solution:
     def secondHighest(self, s: str) -> int:
-        dig=set()
+        l=[]
+        first=-1
+        second=-1
         for ch in s:
             if ch.isdigit():
-                dig.add(int(ch))
-        dig=sorted(dig)
-        if len(dig)>=2:
-            return dig[-2]
-        return -1
-
-        '''
-        digits = {int(c) for c in s if c.isdigit()}
-    
-    # Sort the unique digits in descending order
-        sorted_digits = sorted(list(digits), reverse=True)
-    
-    # Return the second element if the list has at least 2 digits
-        return sorted_digits[1] if len(sorted_digits) >= 2 else -1
-        '''
+                l.append(int(ch))
+        for i in range(len(l)):
+            if l[i]>first:
+                second=first
+                first=l[i]
+            elif first>l[i] and l[i]>second:
+                second=l[i]
+        return second
+        
