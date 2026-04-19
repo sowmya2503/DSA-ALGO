@@ -3,6 +3,10 @@ class Solution:
         """
         Do not return anything, modify s in-place instead.
         """
+        if not s:
+            return ""
+        if len(s)==1:
+            return s
         l=0
         r=len(s)-1
         while l<r:
