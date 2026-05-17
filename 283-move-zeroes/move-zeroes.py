@@ -9,7 +9,8 @@ class Solution:
                 nums[index]=nums[i]
                 index+=1
         while index<len(nums):
-            nums[index]=0
-            index+=1
+            nums[index]=0 
+            index+=1 
         return nums
+                
         
