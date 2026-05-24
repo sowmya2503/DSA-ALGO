@@ -1,14 +1,14 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        opening=['(','{','[']
-        closing=[')','}',']'] 
+        opening=['(','[','{']
+        closing=[')',']','}']
         st=[]
         for ch in s:
             if ch in opening:
                 st.append(ch)
             elif ch in closing:
                 if len(st)==0:
-                    return False 
+                    return False
                 elif len(st)>0:
                     k=st.pop()
                     if opening.index(k)!=closing.index(ch):
