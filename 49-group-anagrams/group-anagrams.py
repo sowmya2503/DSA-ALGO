@@ -6,5 +6,4 @@ class Solution:
             k=''.join(sorted(word))
             d[k].append(word)
         return list(d.values())
-            
         
